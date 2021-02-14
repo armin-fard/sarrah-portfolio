@@ -1,46 +1,41 @@
 <template>
   <v-app>
     <v-main class="container">
+      <div class="nav-image-container">
+        <v-overlay
+          :absolute=true
+          :value=true
+          opacity="0"
+          z-index="0"
+        >
+          <v-btn text small color="secondary" rounded>
+            About
+          </v-btn>
+          <v-btn text small color="secondary" rounded>
+            Blog
+          </v-btn>
+          <v-avatar size="150" tile>
+            <img
+            src="./assets/Logo.png"
+            alt="Picture"
+            class="logo"
+            
+          >
+          </v-avatar>
+          <v-btn text small color="secondary" rounded>
+            Contact
+          </v-btn> 
+          <v-btn text small color="secondary" rounded>
+            Portfolio
+          </v-btn> 
+        </v-overlay>
+        <img
+          src="./assets/nav.jpg"
+          alt="Picture"
+          class="nav-img"
+        >
+      </div> 
       <v-container>
-        <v-row class="text-center">
-          <v-col>
-              <div class="nav-image-container">
-                <v-overlay
-                  :absolute=true
-                  :value=true
-                  opacity="0"
-                  z-index="0"
-                >
-                  <v-btn text small color="secondary" rounded>
-                    About
-                  </v-btn>
-                  <v-btn text small color="secondary" rounded>
-                    Blog
-                  </v-btn>
-                  <v-avatar size="85" tile>
-                    <img
-                    src="./assets/Logo.png"
-                    alt="Picture"
-                    
-                  >
-                  </v-avatar>
-                  <v-btn text small color="secondary" rounded>
-                    Contact
-                  </v-btn> 
-                  <v-btn text small color="secondary" rounded>
-                    Portfolio
-                  </v-btn> 
-                </v-overlay>
-                <img
-                  src="./assets/nav.jpg"
-                  alt="Picture"
-                >
-              </div>            
-          </v-col>
-        </v-row>
-        <v-card color="default">
-
-        </v-card>
         <router-view></router-view>
       </v-container>
     </v-main>
@@ -91,15 +86,20 @@ export default {
 @import './assets/css/stylesheet.css';
 .nav-image-container {
   width: 100%;
+  // height: 10rem;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.nav-image-container img {
+.logo {
   width: 100%;
-  height: auto;
-  object-fit: contain
+  object-fit: contain;
+}
+.nav-img {
+  width: 100%;
+  height: 45rem;
+  object-fit: cover;
 }
 .container .v-overlay {
   position: absolute;
