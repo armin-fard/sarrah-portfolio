@@ -1,0 +1,25 @@
+/* Custom CSS module for global styling */
+
+.container {
+background: #ECECEC;
+}
+.avatar {
+box-shadow: 0.5px 0.5px 0.5px 0.5px #c4c4c4;
+}
+.btn-icon {
+margin: 0.5rem;
+}
+.ck-content {
+min-height: 28rem;
+}
+.ck-editor__editable {
+overflow-y: scroll;
+height: 20rem;
+resize: none;
+}
+.ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
+margin: 0.5rem;
+}
+.divider {
+background: #D37D48
+}
