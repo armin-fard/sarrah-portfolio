@@ -13,6 +13,7 @@
                 alt="Avatar"
               >
             </v-avatar> -->
+            
             <p>Something here...</p>
           </v-col>
         </v-row>
