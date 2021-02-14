@@ -4,28 +4,42 @@
       <v-container>
         <v-row class="text-center">
           <v-col>
-            <!-- <v-avatar
-              class="avatar"
-              size="155"
-            >
-              <img
-                src="./assets/avatar.jpg"
-                alt="Avatar"
-              >
-            </v-avatar> -->
-            
-            <p>Something here...</p>
+              <div class="nav-image-container">
+                <v-overlay
+                  :absolute=true
+                  :value=true
+                  opacity="0"
+                  z-index="0"
+                >
+                  <v-btn text small color="secondary" rounded>
+                    About
+                  </v-btn>
+                  <v-btn text small color="secondary" rounded>
+                    Blog
+                  </v-btn>
+                  <v-avatar size="85" tile>
+                    <img
+                    src="./assets/Logo.png"
+                    alt="Picture"
+                    
+                  >
+                  </v-avatar>
+                  <v-btn text small color="secondary" rounded>
+                    Contact
+                  </v-btn> 
+                  <v-btn text small color="secondary" rounded>
+                    Portfolio
+                  </v-btn> 
+                </v-overlay>
+                <img
+                  src="./assets/nav.jpg"
+                  alt="Picture"
+                >
+              </div>            
           </v-col>
         </v-row>
         <v-card color="default">
-        <v-row class="text-center">
-          <v-col v-for="(route, i) in routes" :key="i">
-            <v-btn @click="navClicked(route.link)" text color="secondary" rounded>
-              <v-icon color="secondary" small class="btn-icon">{{ route.icon }}</v-icon>
-              {{ route.label }}
-            </v-btn>
-          </v-col>
-        </v-row>
+
         </v-card>
         <router-view></router-view>
       </v-container>
@@ -47,11 +61,6 @@ export default {
         label: 'Home',
         link: '/home',
         icon: 'fa-home'
-      },
-            {
-        label: 'About',
-        link: '/about',
-        icon: 'fa-book-open'
       },
       {
         label: 'Blog',
@@ -80,4 +89,24 @@ export default {
 
 <style lang="scss">
 @import './assets/css/stylesheet.css';
+.nav-image-container {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain
+}
+.container .v-overlay {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
 </style>
