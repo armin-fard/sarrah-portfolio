@@ -4,7 +4,7 @@
       <v-container>
         <v-row class="text-center">
           <v-col>
-            <v-avatar
+            <!-- <v-avatar
               class="avatar"
               size="155"
             >
@@ -12,13 +12,14 @@
                 src="./assets/avatar.jpg"
                 alt="Avatar"
               >
-            </v-avatar>
+            </v-avatar> -->
+            <p>Something here...</p>
           </v-col>
         </v-row>
         <v-card color="default">
         <v-row class="text-center">
           <v-col v-for="(route, i) in routes" :key="i">
-            <v-btn text color="secondary" rounded>
+            <v-btn @click="navClicked(route.link)" text color="secondary" rounded>
               <v-icon color="secondary" small class="btn-icon">{{ route.icon }}</v-icon>
               {{ route.label }}
             </v-btn>
@@ -47,13 +48,13 @@ export default {
         icon: 'fa-home'
       },
             {
-        label: 'Features',
-        link: '/features',
+        label: 'About',
+        link: '/about',
         icon: 'fa-book-open'
       },
       {
-        label: 'Reviews',
-        link: '/reviews',
+        label: 'Blog',
+        link: '/blog',
         icon: 'fa-comment-alt'
       },
       {
@@ -63,6 +64,13 @@ export default {
       },
     ]
   }),
+  methods: {
+    navClicked (link) {
+      console.log(link)
+      this.$router.push(link)
+  
+    }
+  },
   created () {
     this.$vuetify.theme.light = true
   },

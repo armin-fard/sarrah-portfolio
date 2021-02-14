@@ -15,7 +15,15 @@ const routes = [
       component: Home
     },
     {
-      path: '/admin',
+      path: '/about',
+      component: Home
+    },
+    {
+      path: '/blog',
+      component: Home
+    },
+    {
+      path: '/contact',
       component: Admin
     }
   ]
