@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main class="container">
+    <v-main class="background">
       <div class="nav-image-container">
         <v-overlay
           :absolute=true
@@ -8,13 +8,13 @@
           opacity="0"
           z-index="0"
         >
-          <v-btn text small color="secondary" rounded>
-            About
+          <v-btn class="nav-btn" color="secondary" text small rounded>
+            <h3>About</h3>
           </v-btn>
-          <v-btn text small color="secondary" rounded>
-            Blog
+          <v-btn class="nav-btn" color="secondary" text small rounded>
+            <h3>Blog</h3>
           </v-btn>
-          <v-avatar size="150" tile>
+          <v-avatar size="200" tile>
             <img
             src="./assets/Logo.png"
             alt="Picture"
@@ -22,11 +22,11 @@
             
           >
           </v-avatar>
-          <v-btn text small color="secondary" rounded>
-            Contact
+          <v-btn class="nav-btn" color="secondary" text small rounded>
+            <h3>Contact</h3>
           </v-btn> 
-          <v-btn text small color="secondary" rounded>
-            Portfolio
+          <v-btn class="nav-btn" color="secondary" text small rounded>
+            <h3>Portfolio</h3>
           </v-btn> 
         </v-overlay>
         <img
@@ -35,13 +35,11 @@
           class="nav-img"
         >
       </div> 
-      <v-container>
-        <router-view></router-view>
-      </v-container>
+      <router-view></router-view>
     </v-main>
-    <v-footer color="default" :elevation="12">
-      <v-spacer></v-spacer>
+    <v-footer height="100" color="footer" :elevation="12">
       <div style="text-color: #D37D48">&copy; {{ new Date().getFullYear() }}</div>
+      <v-spacer></v-spacer>
     </v-footer>
   </v-app>
 </template>
@@ -83,7 +81,11 @@ export default {
 </script>
 
 <style lang="scss">
+
 @import './assets/css/stylesheet.css';
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Spartan:wght@200&display=swap');
+
 .nav-image-container {
   width: 100%;
   // height: 10rem;
@@ -98,15 +100,18 @@ export default {
 }
 .nav-img {
   width: 100%;
-  height: 45rem;
+  height: 30rem;
   object-fit: cover;
 }
-.container .v-overlay {
+.nav-btn {
+  font-family: 'Spartan', sans-serif;
+  margin: auto;
+}
+.nav-image-container .v-overlay {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-
 </style>

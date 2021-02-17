@@ -1,7 +1,7 @@
 /* Custom CSS module for global styling */
 
-.container {
-background: #ECECEC;
+.background {
+background: #F8E2D5;
 }
 .avatar {
 box-shadow: 0.5px 0.5px 0.5px 0.5px #c4c4c4;
