@@ -43,40 +43,14 @@
           <v-card-title class="justify-end">
             <p class="card-title">See My Work At</p>
           </v-card-title>
-          <v-card-text class="justify-center">
-            <v-avatar size="200" tile>
+            <v-avatar class="logo-container" v-for="(image, index) in images" :key="index" size="200" tile>
               <img
-              src="../assets/mcdonalds.jpg"
-              alt="Picture"
-              class="logo"
-              
-            >
-            </v-avatar>
-              <v-avatar size="200" tile>
-                <img
-                src="../assets/in-n-out.png"
-                alt="Picture"
                 class="logo"
-                
-              >
-            </v-avatar>
-              <v-avatar class="logo-avatar" size="200" tile>
-                <img
-                src="../assets/taco-bell.png"
+                :src="image.path"
                 alt="Picture"
-                class="logo"
-                
-              >
+              />
             </v-avatar>
-            <v-avatar size="200" tile>
-              <img
-                src="../assets/sonic.png"
-                alt="Picture"
-                class="logo"
-                
-              >
-            </v-avatar>
-          </v-card-text>
+
         </v-card>
       </v-col>
       <v-col cols="2" />
@@ -90,7 +64,12 @@
     name: 'Home',
 
     data: () => ({
-
+      images: [
+        { path: require('../assets/in-n-out.png') },
+        { path: require('../assets/taco-bell.png') },
+        { path: require('../assets/mcdonalds.jpg') },
+        { path: require('../assets/sonic.png') }
+      ]
     }),
   }
 </script>
@@ -105,7 +84,10 @@
   font-family: 'Roboto', sans-serif;
   color: #3A3F3A;
 }
-.logo-avatar {
-  margin: 1rem;
+.logo-container {
+  margin: 0 1.5rem 0 1.5rem;
+}
+.logo {
+  object-fit: contain;
 }
 </style>
